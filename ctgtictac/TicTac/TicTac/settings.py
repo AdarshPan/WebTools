@@ -22,8 +22,7 @@ MEDIA_DIR=os.path.join(BASE_DIR,"media")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vp+&&ml_o7^au9fdmq^xkl0u(o_hta9o0ck)5*9h!abhp!0*k-'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
