@@ -1,0 +1,21 @@
+{% extends 'ctgctg/base.html' %}
+{% block content %}
+<div class="container">
+
+
+   <h1>Upload Music!</h1>
+    <!--<form method="post">-->
+      <!--{% csrf_token %}-->
+      <!--{{form.as_p}}-->
+      <!--<input type="submit" value="Create Music!" class="btn btn-primary">-->
+    <!--</form>-->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token%}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-primary" value="Create Music!">
+    </form>
+
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'ctgctg/base.html' %}
+{% block mu %}
+   <ul><a href="{% url 'upload' user %}" class="navbar-link">Upload</a></ul>
+    <form class="form-inline" action="{% url 'music_search' %}"><ul>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search Music" aria-label="Search" name="search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </ul>
+  </form>
+{% endblock %}
+{% block content %}
+<div class="container">
+
+<h1>Here is the Music For You @{{user|upper}} Enjoy!</h1>
+{% for music in object_list %}
+  <hr>
+       <div class="card" style="width: 20rem; ">
+  <img src={{music.Cover_Picture.url}} class="card-img-top" alt="No cover Photo Uploaded!">
+  <div class="card-body">
+    <h5 class="card-title">#{{music.Song_Name}} by  {{music.Artist_Name}}</h5>
+    <p class="card-text">Uploaded By:@{{music.user_uploaded}}</p>
+    <hr>
+      <p class="card-text"><audio src={{music.Song_File.url}} controls ></audio></p>
+  </div>
+       </div>
+    </div>
+
+{% endfor %}
+
+
+
+
+
+
+</div>
+
+{% endblock %}

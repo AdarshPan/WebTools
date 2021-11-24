@@ -1,0 +1,44 @@
+{% extends 'ctgctg/base.html' %}
+{% block content %}
+<hr>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome  @{{user|upper}}!</h1>
+    <!--<textarea placeholder="WHats On Your MInd{{user|upper}}!"></textarea>-->
+    <h1>HEre IS The REalto:</h1>
+    {% for posts in post %}
+      <hr>
+    <div class="container">
+       <div class="card" style="width: 20rem; ">
+  <img src={{posts.Image.url}} class="card-img-top" alt="Sorry Sir/Mam Not able to display the image">
+  <div class="card-body">
+    <h5 class="card-title">#{{posts.Title}}</h5>
+    <p class="card-text">{{posts.Description}}</p>
+      {% if user == posts.Username %}
+          <p class="card-text">@You</p>
+      {%  else %}
+          <p class="card-text">@{{posts.Username}}</p>
+      {% endif %}<hr>
+       <h4>Comments:</h4>
+      {% for  cc in  posts.comments.all %}
+        <ol><li><p class="card-text"><h6>{{cc.comment}} by <h9>@{{cc.user_commented}}</h9></h6> </p></li></ol>
+      {% empty %}
+        <p><h9>Be The First One To Comment on This Post!</h9></p>
+
+      {% endfor %}
+     <form method="post" action="{% url 'comments_creates' username=user title_slug=posts.title_slug %}"> {% csrf_token %}
+    <input type="submit" value="Comment!" class="btn btn-primary"></form>
+
+  </div>
+        </div>
+    </div>{% endfor %}
+
+      <!--somme of the possted pics by ctgians!-->
+  </div>
+
+
+
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'ctgctg/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<head>
+ <style type="text/css">
+  body{
+    background-image: url("{% static 'images/Austria6.jpg' %}");
+    background-size:cover;
+    background-attachment:fixed;
+    <!--background:black;-->
+    }
+
+  </style>
+</head>
+<body>
+  <!--<link rel="stylesheet" href="{% static 'css/mani.css' %}">-->
+
+   <hr>
+    <title>The Amazing Ctg:A Website For CTG with Love</title>
+  {% if user.is_authenticated %}
+    <h1>Namaste!  @{{user}}</h1>
+  {% else %}
+  <h1>Namaste! Please Go And Login First To Use This Site</h1>
+  {% endif %}
+<!--<div class="bd-example">-->
+  <!--<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">-->
+
+    <!--<div class="carousel-inner">-->
+      <!--<div class="carousel-item active">-->
+        <!--<img src="{% static 'images/Austria6.jpg' %}" class="d-block w-100" alt="Not Able to display the image due to slow Internet Connetion ">-->
+        <!--<div class="carousel-caption d-none d-md-block">-->
+          <!--<h5>Austria</h5>-->
+          <!--<p>BeautiFul Nature</p>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+  </body>
+
+<h1></h1>
+{% endblock %}
+
+

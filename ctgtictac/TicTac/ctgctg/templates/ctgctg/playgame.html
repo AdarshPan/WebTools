@@ -1,0 +1,64 @@
+{% extends 'ctgctg/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+
+<h1>Namaste!</h1>
+<h1>WElcome To THe CTG TIc TAc TOe GAme!</h1>
+<link rel="stylesheet" href="{%static 'playgame.css' %}"><hr><hr>
+<link rel="stylesheet" href="{% static 'playgame.js' %}" >
+<script type="text/javascript" src="{% static 'playgame.js' %}">
+
+</script>
+<div class="jumbotron">
+    <!--<h1>HEre ARe THe USers YOu CAn PLay With:</h1>-->
+    <!--{% for users in object_list %}-->
+    <!--{% if user.is_online %}-->
+
+     <!--<h2><a href="#">{{users.username}}</a></h2>-->
+
+
+   <!--{% endif %}-->
+
+
+
+    <!--{% empty %}-->
+    <!--<h1>NO USerr</h1>-->
+    <!--{% endfor %}-->
+
+
+
+
+
+
+
+
+</div>
+<div class="jumbotron">
+    <button class='btn btn-primary btn-large' id="Reset">Reset</button>
+<table id="b">
+    <tr>
+        <td height="100" width="100" id="one"></td>
+        <td height="100" width="100" id="two"></td>
+        <td height="100" width="100" id="three"></td>
+
+
+    </tr>
+    <tr>
+        <td height="100" width="100" id="four">X</td>
+        <td height="100" width="100" id="five"></td>
+        <td height="100" width="100" id="six"></td>
+
+
+    </tr>
+    <tr>
+        <td height="100" width="100" id="seven"></td>
+        <td height="100" width="100" id="eight"></td>
+        <td height="100" width="100" id="nine"></td>
+
+
+    </tr>
+</table>
+</div>
+{% endblock %}

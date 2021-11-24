@@ -1,0 +1,24 @@
+{% extends 'ctgctg/base.html' %}
+{% block content %}
+
+    <title>Title</title>
+   <hr>
+{% if registered %}
+  <div class="jumbotron">
+      <h1>THanks FOr REgistering! Go On the LOgin Page to <a href="{% url 'login'%}">LOgin</a> to the site.</h1>
+  </div>
+{% else %}
+<h1>REgister HEre!</h1>
+  <div class="jumbotron">
+    <div class="container">
+    <form method="post">
+
+    {% csrf_token %}
+    {{form.as_p}}
+    {{user_info_form.as_p}}
+    <input type="submit" value="Register" class="btn btn-primary">
+    </form>
+    </div>
+  </div>
+{% endif %}
+{% endblock %}

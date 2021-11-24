@@ -1,0 +1,21 @@
+{% extends 'ctgctg/base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Here Are The Results for "{{search_term}}"</h1>
+    {% for music in music %}
+        <div class="card" style="width: 20rem; ">
+  <img src={{music.Cover_Picture.url}} class="card-img-top" alt="No cover Photo Uploaded!">
+  <div class="card-body">
+    <h5 class="card-title">#{{music.Song_Name}} by  {{music.Artist_Name}}</h5>
+    <p class="card-text">Uploaded By:@{{music.user_uploaded}}</p>
+    <hr>
+      <p class="card-text"><audio src={{music.Song_File.url}} controls ></audio></p>
+  </div>
+       </div>
+
+    {% empty %}
+     <h3>Sorry @{{user|upper}} No results Matched Your Search!</h3>
+    {% endfor %}
+
+</div>
+{% endblock %}
